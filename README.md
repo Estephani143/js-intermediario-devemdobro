@@ -1,9 +1,9 @@
 Esse script implementa um slider simples: seleciona todas as imagens (ou slides), controla qual slide está visível com um índice (imagemAtual) e alterna entre slides ao clicar nas setas de avançar/voltar. A classe CSS 'mostrar' é usada para exibir o slide atual; a classe 'opacidade' controla a aparência (provavelmente desabilitada/“apagada”) das setas.
 
 ## 1) Seletores e variáveis iniciais
-const imagens = document.querySelectorAll('.slide');
+```const imagens = document.querySelectorAll('.slide');
 const setaAvancar = document.getElementById('seta-avancar');
-const setaVoltar = document.getElementById('seta-voltar');
+const setaVoltar = document.getElementById('seta-voltar');´´´
 
 let imagemAtual = 0;
 
