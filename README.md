@@ -3,7 +3,7 @@ Esse script implementa um slider simples: seleciona todas as imagens (ou slides)
 ## 1) Seletores e variáveis iniciais
 ```const imagens = document.querySelectorAll('.slide');
 const setaAvancar = document.getElementById('seta-avancar');
-const setaVoltar = document.getElementById('seta-voltar');´´´
+const setaVoltar = document.getElementById('seta-voltar');```
 
 let imagemAtual = 0;
 
