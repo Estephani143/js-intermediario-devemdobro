@@ -34,7 +34,7 @@ setaAvancar.addEventListener('click', function() {
 ~~~
 
 ### Passo a passo:
-~~~
+
 setaAvancar.addEventListener('click', ...) — adiciona um listener para o evento de clique na seta de avançar.
 
 if(imagemAtual === imagens.length -1) { return; } — verifica se já estamos no último slide (o último índice é length - 1). Se sim, interrompe a função (o return evita avançar além do último).
@@ -46,7 +46,7 @@ esconderImagemAberta(); — remove a classe .mostrar do slide atualmente visíve
 mostrarImagem(); — adiciona .mostrar ao novo slide (imagens[imagemAtual]), tornando-o visível.
 
 mostrarOuEsconderSetas(); — atualiza as classes das setas (ex.: habilita/desabilita visualmente as setas dependendo do índice).
-~~~
+
 
 **Nota sobre ordem: aqui o código incrementa imagemAtual antes de chamar esconderImagemAberta(). Isso funciona porque esconderImagemAberta() busca o elemento com .mostrar no DOM (independente do índice). A ordem é um pouco inconsistente com o evento de voltar (ver abaixo), mas funcional.**
 
