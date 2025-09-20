@@ -20,7 +20,8 @@ Observação prática: é bom checar se os seletores realmente encontraram eleme
 ---
 
 ## 2) Evento de avançar
-```setaAvancar.addEventListener('click', function() {
+~~~
+setaAvancar.addEventListener('click', function() {
     if(imagemAtual === imagens.length -1) {
         return;
     }   
@@ -30,11 +31,11 @@ Observação prática: é bom checar se os seletores realmente encontraram eleme
    mostrarImagem();
    mostrarOuEsconderSetas();
 });
-
+~~~
 
 ### Passo a passo:
-
-```setaAvancar.addEventListener('click', ...) — adiciona um listener para o evento de clique na seta de avançar.
+~~~
+setaAvancar.addEventListener('click', ...) — adiciona um listener para o evento de clique na seta de avançar.
 
 if(imagemAtual === imagens.length -1) { return; } — verifica se já estamos no último slide (o último índice é length - 1). Se sim, interrompe a função (o return evita avançar além do último).
 
@@ -45,16 +46,18 @@ esconderImagemAberta(); — remove a classe .mostrar do slide atualmente visíve
 mostrarImagem(); — adiciona .mostrar ao novo slide (imagens[imagemAtual]), tornando-o visível.
 
 mostrarOuEsconderSetas(); — atualiza as classes das setas (ex.: habilita/desabilita visualmente as setas dependendo do índice).
+~~~
 
 **Nota sobre ordem: aqui o código incrementa imagemAtual antes de chamar esconderImagemAberta(). Isso funciona porque esconderImagemAberta() busca o elemento com .mostrar no DOM (independente do índice). A ordem é um pouco inconsistente com o evento de voltar (ver abaixo), mas funcional.**
 
 ---
 
 ## 3) Função mostrarImagem
-```function mostrarImagem() {
+~~~
+function mostrarImagem() {
     imagens[imagemAtual].classList.add('mostrar');
 }
-
+~~~
 
 Acessa o elemento no array imagens pelo índice imagemAtual e adiciona a classe CSS 'mostrar'.
 
@@ -63,11 +66,12 @@ Presume que imagens[imagemAtual] existe (ou seja, imagemAtual está dentro do in
 ---
 
 ## 4) Função esconderImagemAberta
-```function esconderImagemAberta() {
+~~~
+function esconderImagemAberta() {
     const imagemAberta = document.querySelector('.mostrar');
     imagemAberta.classList.remove('mostrar');
 }
-
+~~~
 
 Procura no DOM o elemento que atualmente tem a classe .mostrar (o slide visível).
 
@@ -79,7 +83,8 @@ Melhoria recomendada: checar if (imagemAberta) imagemAberta.classList.remove('mo
 ---
 
 ## 5) Função mostrarOuEsconderSetas
-```function mostrarOuEsconderSetas() {
+~~~
+function mostrarOuEsconderSetas() {
     const naoEhAPrimeiraImagem = imagemAtual !== 0;
     if(naoEhAPrimeiraImagem) {
         setaVoltar.classList.remove('opacidade');
@@ -94,7 +99,7 @@ Melhoria recomendada: checar if (imagemAberta) imagemAberta.classList.remove('mo
         setaAvancar.classList.remove('opacidade');
     }
 }
-
+~~~
 
 naoEhAPrimeiraImagem: verifica se não estamos no primeiro slide.
 
@@ -117,6 +122,7 @@ opacidade é uma classe visual — o script espera que o CSS trate dela (por exe
 ---
 
 ## 6) Evento de voltar
+~~~
 setaVoltar.addEventListener('click', function() {   
     if (imagemAtual === 0) {
        return;
@@ -128,7 +134,7 @@ setaVoltar.addEventListener('click', function() {
     mostrarImagem();
    mostrarOuEsconderSetas();
 });
-
+~~~
 
 ### Passo a passo:
 
